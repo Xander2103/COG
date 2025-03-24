@@ -13,6 +13,9 @@ class AChainsOfGloryGameMode : public AGameModeBase
 
 public:
 	AChainsOfGloryGameMode();
+
+	UFUNCTION(BlueprintCallable)
+	UCharacterInventory* GetCharacterInventory();
 };
 
 

@@ -2,6 +2,7 @@
 
 #include "ChainsOfGloryGameMode.h"
 #include "ChainsOfGloryCharacter.h"
+#include "UCharacterInventory.h"
 #include "UObject/ConstructorHelpers.h"
 
 AChainsOfGloryGameMode::AChainsOfGloryGameMode()
@@ -12,4 +13,9 @@ AChainsOfGloryGameMode::AChainsOfGloryGameMode()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
+}
+
+UCharacterInventory* AChainsOfGloryGameMode::GetCharacterInventory()
+{
+	return UCharacterInventory::GetInstance();
 }
