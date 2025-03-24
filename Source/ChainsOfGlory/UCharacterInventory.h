@@ -26,6 +26,8 @@ public:
 
 	int InventorySize = 64;
 
+	int InventoryRowSize = 8;
+
 	UCharacterInventory();
 };
 

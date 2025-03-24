@@ -26,6 +26,8 @@ UCharacterInventory::UCharacterInventory()
 {
 	for(int i = 0; i < InventorySize; i++)
 	{
-		InventoryItems.Add(FinventoryItem());
+		int row = i / InventoryRowSize;
+		int column = i % InventoryRowSize;
+		InventoryItems.Add(FinventoryItem(row, column));
 	}
 }
