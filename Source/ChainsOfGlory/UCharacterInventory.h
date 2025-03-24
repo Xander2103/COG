@@ -29,6 +29,8 @@ public:
 	int InventoryRowSize = 8;
 
 	UCharacterInventory();
+
+	~UCharacterInventory();
 };
 
 UCharacterInventory* UCharacterInventory::_instance = nullptr;

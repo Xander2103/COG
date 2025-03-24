@@ -31,3 +31,9 @@ UCharacterInventory::UCharacterInventory()
 		InventoryItems.Add(FinventoryItem(row, column));
 	}
 }
+
+UCharacterInventory::~UCharacterInventory()
+{
+	_instance = nullptr;
+	InventoryItems = TArray<FinventoryItem>();
+}
