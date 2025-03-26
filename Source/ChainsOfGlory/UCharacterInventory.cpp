@@ -37,3 +37,33 @@ UCharacterInventory::~UCharacterInventory()
 	_instance = nullptr;
 	InventoryItems = TArray<FinventoryItem>();
 }
+
+void UCharacterInventory::AddItem(FInventoryItemDefinition definition)
+{
+	FinventoryItem* item = nullptr;
+	for (int i= 0; i < InventoryItems.Num(); i++)
+	{
+		if (definition.Name == InventoryItems[i].ItemDefinition.Name)
+		{
+			item = &InventoryItems[i];
+		}
+	}
+
+	if (item == nullptr)
+	{
+		for (int i= 0; i < InventoryItems.Num(); i++)
+		{
+			if(InventoryItems[i].Count == 0)
+			{
+				item = &InventoryItems[i];
+				break;
+			}
+		}
+	}
+	
+	if (item != nullptr)
+	{
+		item->Count++;
+		item->ItemDefinition = definition;
+	}
+}
