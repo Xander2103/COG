@@ -12,11 +12,14 @@ struct FInventoryItemDefinition : public FTableRowBase
 	FString Description = "";
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UTexture2D* IconImage;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UClass* ItemObject;
 
 	FInventoryItemDefinition() : IconImage()
 	{
 		Name = "";
 		Description = "";
 		IconImage = nullptr;
+		ItemObject = nullptr;
 	}
 };
